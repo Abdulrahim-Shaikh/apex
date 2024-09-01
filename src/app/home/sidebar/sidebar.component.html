@@ -1,0 +1,28 @@
+<div>
+    <p-sidebar [position]="'right'" [(visible)]="sidebarVisible">
+        <ng-template pTemplate="header">
+            <span class="text-sm pl-2">
+                Menu
+            </span>
+        </ng-template>
+        <hr/>
+        <ng-template pTemplate="content">
+            <div class="menu-option block font-bold text-start p-2 border-round mb-1">About</div>
+            <div class="menu-option block font-bold text-start p-2 border-round mb-1">Contact Me</div>
+            <div class="menu-option block font-bold text-start p-2 border-round mb-1">Donate</div>
+            <div
+                routerLink="/login"
+                (keypress)="
+                    router.navigate(['/login']);
+                    sidebarVisible=false"
+                (click)="sidebarVisible=false"
+                class="menu-option block font-bold text-start p-2 border-round mb-1"
+            >Sign In</div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+        </ng-template>
+    </p-sidebar>
+    <form (ngSubmit)="sidebarVisible=true">
+        <p-button [outlined]="true" type="submit" icon="pi pi-bars"></p-button>
+    </form>
+</div>

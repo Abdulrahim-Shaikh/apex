@@ -1,0 +1,12 @@
+.menu-option {
+    cursor: pointer;
+}
+
+.menu-option:hover {
+    border: 1px solid grey;
+    background-color: black;
+}
+
+hr {
+  border: 1px dotted #183462;
+}

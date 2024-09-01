@@ -1,0 +1,19 @@
+:host ::ng-deep .light .p-dialog-header {
+  background-color: black;
+}
+
+:host ::ng-deep .light .p-dialog-content {
+  background-color: black;
+}
+
+:host ::ng-deep .light .p-dialog-footer {
+  background-color: black;
+}
+
+hr {
+  border: 1px dotted #183462;
+}
+
+.p-inputgroup-addon {
+  cursor: pointer;
+}

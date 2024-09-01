@@ -1,0 +1,17 @@
+.container {
+  flex-direction: row;
+}
+
+@media(max-width:820px) {
+  .container {
+    flex-direction: column;
+  }
+  app-left-column-list,
+  app-right-column-window {
+    width: 100%;
+    height: auto;
+  }
+  app-right-column-window {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+<div class="flex justify-content-between flex-wrap">
+  <div class="flex align-items-center justify-content-center gap-2">
+    <span>
+      <p-button icon="pi pi-arrow-left" severity="secondary" [rounded]="true" [text]="true"></p-button>
+    </span>
+    <div class="flex align-items-center flex-wrap gap-1">
+      <span>
+        <p-avatar image="/assets/google.jpeg" styleClass="mr-2"></p-avatar>
+      </span>
+      <span class="text-lg"> Full Stack Developer </span>
+    </div>
+  </div>
+  <div class="flex align-items-center justify-content-center gap-1">
+    <p-button label="Chat with advertiser" (onClick)="showMessageDialog()" icon="pi pi-comments" [outlined]="true"
+      badge="2" badgeClass="p-badge-danger"></p-button>
+    <p-button icon="pi pi-bookmark" severity="secondary" [rounded]="true" [text]="true"></p-button>
+    <p-button icon="pi pi-share-alt" severity="secondary" [rounded]="true" [text]="true"></p-button>
+    <p-button icon="pi pi-ellipsis-h" severity="secondary" [rounded]="true" [text]="true"></p-button>
+  </div>
+</div>
+<hr />
+
+<div>
+  <p-dialog #dialog header="Chat" [(visible)]="visible" [modal]="true" [position]="'bottomright'" [resizable]="true" [maximizable]="true" [styleClass]="'light'" [style]="messageDialogStyle">
+    <div class="flex flex-column flex-wrap h-full">
+      <div class="flex flex-column flex-wrap flex-grow-1">
+        <div class="flex align-items-center justify-content-end flex-wrap">
+          <p-chip label="Message from you"></p-chip>
+        </div>
+        <div class="flex align-items-center justify-content-start flex-wrap">
+          <p-chip label="Message from sender"></p-chip>
+        </div>
+      </div>
+      <p-divider></p-divider>
+      <div>
+        <form *ngIf="messageFormGroup" [formGroup]="messageFormGroup" (ngSubmit)="sendMessage()" class="p-inputgroup">
+          <textarea rows="3" cols="30" pInputTextarea formControlName="text" placeholder="Type a message"></textarea>
+          <button type="submit" pButton icon="pi pi-send" styleClass="p-button-warn"></button>
+        </form>
+      </div>
+    </div>
+  </p-dialog>
+</div>
